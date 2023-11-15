@@ -26,7 +26,8 @@ app=Flask(__name__)
 app.config['SECRET_KEY']=os.environ.get('SECRET_KEY')
 PSQL_PASSWORD=os.environ.get('PSQL_PASSWORD')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI','sqlite:///marketplace.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///marketplace.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy()
