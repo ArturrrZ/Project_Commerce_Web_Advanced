@@ -88,8 +88,8 @@ class Comment(db.Model):
 
 
 
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 
 Bootstrap5(app)
 
